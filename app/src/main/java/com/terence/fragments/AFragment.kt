@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import com.terence.fragments.databinding.FragmentABinding
 
 
@@ -27,8 +28,9 @@ class AFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.moveBtn.setOnClickListener {
-           val activity = requireActivity() as MainActivity
-            activity.navigate(BFragment())
+            var action = AFragmentDirections.actionAFragmentToBFragment("gooooooo")
+            findNavController().navigate(action)
+
             }
         }
 

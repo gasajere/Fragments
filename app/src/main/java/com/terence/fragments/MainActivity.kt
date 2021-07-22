@@ -13,15 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        navigate(AFragment())
 
 
 
     }
-    fun navigate(fragment: Fragment){
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            replace(R.id.fragment_container_view, fragment)
-        }
-    }
+
 }
